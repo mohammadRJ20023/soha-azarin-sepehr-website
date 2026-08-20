@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    "django_cleanup.apps.CleanupConfig",
+    
     #my app: 
     "Home.apps.HomeConfig",
+    "Services.apps.ServicesConfig"
 ]
 
 MIDDLEWARE = [
