@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import ContactUsForm
+from .models import ContactUs
 
 
 
@@ -6,6 +8,24 @@ from django.shortcuts import render
 
 def Home_page(request):
     
-    return render(request, "Home/Home.html", {})
+    if request.method == "POST":
+        
+        form = ContactUsForm(request.POST)
+        
+        if form.is_valid():
+            name = form.cleaned_data.get("name")
+            email = form.cleaned_data.get("email")
+            text = form.cleaned_data.get("text")
+            
+            ContactUs.objects.create(name=name, email=email, text=text)
+            
+            form.save()
+
+            return redirect("Home:Home")
+    else:
+        form = ContactUsForm    
+            
+    
+    return render(request, "Home/Home.html", {"form":form})
 
 

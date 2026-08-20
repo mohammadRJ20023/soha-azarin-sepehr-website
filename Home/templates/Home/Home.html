@@ -591,22 +591,32 @@ https://templatemo.com/tm-586-scholar
       <div class="col-lg-6">
         <div class="contact-us-content">
           <form id="contact-form" action="" method="post">
+              {% csrf_token %}
             <div class="row">
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="name" name="name" id="name" placeholder="نام شما..." autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="ایمیل شما..." required="">
-                </fieldset>
-              </div>
-              <div class="col-lg-12">
-                <fieldset>
-                  <textarea name="message" id="message" placeholder="پیام یا درخواست خود را بنویسید..."></textarea>
-                </fieldset>
-              </div>
+
+                
+
+                {% if form.name.errors %}
+                  <div class="alert alert-danger ">{{ form.name.errors }}</div>
+                {%endif%}
+
+                {{ form.name}}
+
+                {% if form.email.errors %}
+                  <div class="alert alert-danger ">{{ form.email.errors }}</div>
+                {%endif%}
+
+                {{form.email}}
+                            
+                {% if form.text.errors %}
+                  <div class="alert alert-danger ">{{ form.text.errors }}</div>
+                {%endif%}
+
+                {{ form.text}}
+                
+                
+                            
+
               <div class="col-lg-12">
                 <fieldset>
                   <button type="submit" id="form-submit" class="orange-button">ارسال درخواست</button>
