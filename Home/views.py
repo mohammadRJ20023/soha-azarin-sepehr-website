@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ContactUsForm
-from .models import ContactUs
-from portfolio.models import Project, CompanyStats
+from .models import ContactUs, CompanyStats
+from portfolio.models import Project
 
 
 
@@ -26,7 +26,7 @@ def Home_page(request):
     else:
         form = ContactUsForm    
             
-    projects = Project.objects.all()
+    projects = Project.objects.all().order_by("-created_at")[:3]
     
     company_stats = CompanyStats.objects.all()
     

@@ -1,4 +1,5 @@
 from django.db import models
+from portfolio.models import Project
 
 
 
@@ -12,3 +13,17 @@ class ContactUs(models.Model):
     
     def __str__(self):
         return f"{self.name} - {self.text[:30]}"
+    
+class CompanyStats(models.Model):
+    years_experience = models.PositiveIntegerField(verbose_name="سال تجربه")
+    happy_clients = models.PositiveIntegerField(verbose_name="مشتریان راضی")
+    service_hours = models.PositiveIntegerField(verbose_name="ساعت خدمات")
+    successful_projects = models.PositiveIntegerField(verbose_name="پروژه موفق", blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if self.successful_projects is None:
+            self.successful_projects = Project.objects.filter(status="پایان یافته").count()
+        super(CompanyStats, self).save()
+        
+    def __str__(self):
+        return "company stats"
