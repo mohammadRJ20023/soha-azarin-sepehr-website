@@ -1,0 +1,278 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>پروژه شرکت پارس - sosmost</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "css/templatemo-scholar.css" %}">
+    <link rel="stylesheet" href="{% static "css/owl.css" %}">
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/swiper-bundle.min.css" %}">
+
+    <style>
+        .detail-content h3 {
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .detail-content p {
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .detail-content ul {
+            margin-bottom: 20px;
+            padding-right: 20px;
+        }
+
+        .detail-content ul li {
+            list-style: disc;
+            line-height: 1.9;
+            margin-bottom: 8px;
+        }
+
+        .detail-meta-box {
+            background: #f7f7f9;
+            border-radius: 8px;
+            padding: 25px 30px;
+            margin-bottom: 30px;
+        }
+
+        .detail-meta-box .row > div {
+            margin-bottom: 10px;
+        }
+
+        .detail-meta-box span {
+            display: block;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .detail-meta-box h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .breadcrumb-nav {
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .breadcrumb-nav a {
+            color: #ff6b35;
+        }
+
+        .detail-hero-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .detail-hero-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        #js-preloader {
+        display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+
+                    <ul class="nav">
+                        <li><a href="index.html">خانه</a></li>
+                        <li><a href="services.html">خدمات</a></li>
+                        <li><a href="index.html#courses">خدمت‌ها</a></li>
+                        <li><a href="index.html#team">تیم ما</a></li>
+                        <li><a href="project-details.html" class="active">نمونه‌کارها</a></li>
+                        <li><a href="login.html">همین حالا ثبت‌نام کنید!</a></li>
+                    </ul>
+
+                    <a class="menu-trigger"><span>منو</span></a>
+
+                    <div class="search-input">
+                        <form id="search" action="#">
+                            <input type="text" placeholder="چیزی تایپ کنید" id="searchText" name="searchKeyword">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
+
+                    <a href="index.html" class="logo">
+                        <h1>sosmost</h1>
+                    </a>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="main-banner" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="item item-1">
+                    <div class="header-text">
+                        <span class="category">خدمات شرکتی</span>
+                        <h2 class="text-header-pic">پروژه شرکت پارس</h2>
+                        <p>اجرای گسترده خدمات شرکتی با کنترل کیفیت مستمر.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section about-us">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8">
+
+                <div class="breadcrumb-nav">
+                    <a href="index.html">خانه</a> /
+                    <a href="project-details.html">نمونه‌کارها</a> /
+                    پروژه شرکت پارس
+                </div>
+
+                <div class="detail-hero-image">
+                    <img src="{% static "image/event-02.jpg" %}" alt="پروژه شرکت پارس">
+                </div>
+
+                <div class="detail-meta-box">
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <span>کارفرما</span>
+                            <h6>شرکت پارس</h6>
+                        </div>
+
+                        <div class="col-md-3">
+                            <span>تاریخ اجرا</span>
+                            <h6>اسفند ۱۴۰۴</h6>
+                        </div>
+
+                        <div class="col-md-3">
+                            <span>مدت اجرا</span>
+                            <h6>۳۰ روز</h6>
+                        </div>
+
+                        <div class="col-md-3">
+                            <span>وضعیت</span>
+                            <h6>تحویل شده</h6>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="detail-content">
+
+                    <h3>درباره پروژه</h3>
+
+                    <p>
+                        پروژه شرکت پارس شامل ارائه مجموعه‌ای از خدمات اجرایی گسترده بود که نیازمند هماهنگی دقیق بین چند بخش مختلف بود. تیم ما با برنامه‌ریزی منسجم، این هماهنگی را در طول ۳۰ روز اجرای پروژه حفظ کرد.
+                    </p>
+
+                    <h3>اقدامات انجام‌شده</h3>
+
+                    <ul>
+                        <li>برنامه‌ریزی اولیه و تعیین زمان‌بندی دقیق</li>
+                        <li>اجرای مرحله‌به‌مرحله با گزارش‌دهی هفتگی</li>
+                        <li>کنترل کیفیت مستمر در طول اجرا</li>
+                        <li>تحویل نهایی طبق زمان‌بندی توافق‌شده</li>
+                    </ul>
+
+                    <h3>نتیجه</h3>
+
+                    <p>
+                        پروژه بدون هیچ‌گونه تأخیری تحویل داده شد و کارفرما از کیفیت و سرعت اجرا رضایت کامل داشت.
+                    </p>
+
+                </div>
+
+                <div class="main-button back-link">
+                    <a href="project-details.html">بازگشت به نمونه‌کارها</a>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="section-heading">
+                    <h6>سایر پروژه‌ها</h6>
+                    <h2>پروژه‌های مرتبط</h2>
+                </div>
+
+                <ul style="list-style:none;padding:0;">
+                    <li style="margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:12px;">
+                        <a href="project-arya.html" style="color:#333;font-weight:600;">اجرای خدمات شرکت آریا</a>
+                    </li>
+
+                    <li style="margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:12px;">
+                        <a href="project-tejari.html" style="color:#333;font-weight:600;">خدمات برای مجموعه تجاری</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <div class="container">
+        <div class="col-lg-12">
+            <p>
+                کپی‌رایت © ۱۴۰۴ سازمان sosmost. تمامی حقوق محفوظ است.
+                &nbsp;&nbsp;&nbsp;
+                طراحی:
+                <a href="index.html" rel="nofollow">sosmost</a>
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script src="{% static "js/jquery.min.js" %}"></script>
+<script src="{% static "js/bootstrap.min.js" %}"></script>
+<script src="{% static "js/isotope.min.js" %}"></script>
+<script src="{% static "js/owl-carousel.js" %}"></script>
+<script src="{% static "js/counter.js" %}"></script>
+<script src="{% static "js/custom.js" %}"></script>
+
+</body>
+</html>
