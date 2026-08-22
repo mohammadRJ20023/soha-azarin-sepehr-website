@@ -473,100 +473,38 @@ https://templatemo.com/tm-586-scholar
         </div>
       </div>
       <div class="col-lg-12 col-md-6">
-        <div class="item">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="image">
-                <img src="{% static "/images/event-01.jpg" %}" alt="">
+        {% for project in projects %}
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="{{ project.image.url }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">{{ project.type }} </span>
+                    <h4>{{ project.title }}</h4>
+                  </li>
+                  <li>
+                    <span>تاریخ اجرا:</span>
+                    <h6>{{ project.start_time }}</h6>
+                  </li>
+                  <li>
+                    <span>مدت اجرا:</span>
+                    <h6>{{ project.duration }}</h6>
+                  </li>
+                  <li>
+                    <span>وضعیت:</span>
+                    <h6>{{ project.status }}</h6>
+                  </li>
+                </ul>
+                <a href="{% url "portfolio:project_detail" project.slug %}"><i class="fa fa-angle-right"></i></a>
               </div>
             </div>
-            <div class="col-lg-9">
-              <ul>
-                <li>
-                  <span class="category">پروژه سازمانی</span>
-                  <h4>اجرای خدمات شرکت آریا</h4>
-                </li>
-                <li>
-                  <span>تاریخ اجرا:</span>
-                  <h6>بهمن ۱۴۰۴</h6>
-                </li>
-                <li>
-                  <span>مدت اجرا:</span>
-                  <h6>۲۲ روز</h6>
-                </li>
-                <li>
-                  <span>وضعیت:</span>
-                  <h6>تکمیل شده</h6>
-                </li>
-              </ul>
-              <a href="#"><i class="fa fa-angle-right"></i></a>
-            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-6">
-        <div class="item">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="image">
-                <img src="{% static "/images/event-02.jpg" %}" alt="">
-              </div>
-            </div>
-            <div class="col-lg-9">
-              <ul>
-                <li>
-                  <span class="category">خدمات شرکتی</span>
-                  <h4>پروژه شرکت پارس</h4>
-                </li>
-                <li>
-                  <span>تاریخ اجرا:</span>
-                  <h6>اسفند ۱۴۰۴</h6>
-                </li>
-                <li>
-                  <span>مدت اجرا:</span>
-                  <h6>۳۰ روز</h6>
-                </li>
-                <li>
-                  <span>وضعیت:</span>
-                  <h6>تحویل شده</h6>
-                </li>
-              </ul>
-              <a href="#"><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12 col-md-6">
-        <div class="item">
-          <div class="row">
-            <div class="col-lg-3">
-              <div class="image">
-                <img src="{% static "/images/event-03.jpg" %}" alt="">
-              </div>
-            </div>
-            <div class="col-lg-9">
-              <ul>
-                <li>
-                  <span class="category">پروژه ویژه</span>
-                  <h4>خدمات برای مجموعه تجاری</h4>
-                </li>
-                <li>
-                  <span>تاریخ اجرا:</span>
-                  <h6>فروردین ۱۴۰۵</h6>
-                </li>
-                <li>
-                  <span>مدت اجرا:</span>
-                  <h6>۴۸ روز</h6>
-                </li>
-                <li>
-                  <span>وضعیت:</span>
-                  <h6>پایان یافته</h6>
-                </li>
-              </ul>
-              <a href="#"><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

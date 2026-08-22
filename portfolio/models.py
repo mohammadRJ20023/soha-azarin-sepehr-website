@@ -8,9 +8,9 @@ from django.utils.text import slugify
 class Project(models.Model):
     
     STATUS_CHOICES = [
-        ("completed", "پایان یافته"),
-        ("in_progress", "در حال اجرا"),
-        ("pending", "در انتظار اجرا"),
+        ("پایان یافته", "پایان یافته"),
+        ( "در حال اجرا", "در حال اجرا"),
+        ("در انتظار اجرا", "در انتظار اجرا"),
     ]
     
     title = models.CharField(max_length=600, null=False, blank=False, verbose_name="عنوان پروژه")
@@ -25,9 +25,14 @@ class Project(models.Model):
     
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, verbose_name="وضعیت")
     
+    about = models.TextField(verbose_name="درباره پروژه")
+    
     created_at = jmodels.jDateField(auto_now_add=True)
     
     slug = models.SlugField(unique=True, blank=True)
+    
+    def __str__(self):
+        return self.title
     
     def save(self, *args, **kwargs):
         
@@ -41,4 +46,4 @@ class Project(models.Model):
         return (end - self.start_time).days
     
     duration.fget.short_description = "مدت اجرا"
-    
+

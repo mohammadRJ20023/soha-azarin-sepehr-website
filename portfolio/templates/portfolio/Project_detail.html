@@ -10,7 +10,7 @@
 
     <title>پروژه شرکت پارس - sosmost</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static "css/fontawesome.css" %}">
     <link rel="stylesheet" href="{% static "css/templatemo-scholar.css" %}">
     <link rel="stylesheet" href="{% static "css/owl.css" %}">
@@ -90,6 +90,20 @@
         #js-preloader {
         display: none !important;
         }
+        .detail-hero-image {
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        }
+
+        .detail-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        }
     </style>
 </head>
 
@@ -162,37 +176,31 @@
 
             <div class="col-lg-8">
 
-                <div class="breadcrumb-nav">
-                    <a href="index.html">خانه</a> /
-                    <a href="project-details.html">نمونه‌کارها</a> /
-                    پروژه شرکت پارس
-                </div>
-
                 <div class="detail-hero-image">
-                    <img src="{% static "image/event-02.jpg" %}" alt="پروژه شرکت پارس">
+                    <img src="{{ project.image.url }}" >
                 </div>
 
                 <div class="detail-meta-box">
                     <div class="row">
 
                         <div class="col-md-3">
-                            <span>کارفرما</span>
-                            <h6>شرکت پارس</h6>
+                            <span>عنوان پروژه</span>
+                            <h6>{{ project.title }}</h6>
                         </div>
 
                         <div class="col-md-3">
                             <span>تاریخ اجرا</span>
-                            <h6>اسفند ۱۴۰۴</h6>
+                            <h6>{{ project.start_time }}</h6>
                         </div>
 
                         <div class="col-md-3">
                             <span>مدت اجرا</span>
-                            <h6>۳۰ روز</h6>
+                            <h6>{{ project.duration }} روز</h6>
                         </div>
 
                         <div class="col-md-3">
                             <span>وضعیت</span>
-                            <h6>تحویل شده</h6>
+                            <h6>{{ project.get_status_display }}</h6>
                         </div>
 
                     </div>
@@ -203,31 +211,19 @@
                     <h3>درباره پروژه</h3>
 
                     <p>
-                        پروژه شرکت پارس شامل ارائه مجموعه‌ای از خدمات اجرایی گسترده بود که نیازمند هماهنگی دقیق بین چند بخش مختلف بود. تیم ما با برنامه‌ریزی منسجم، این هماهنگی را در طول ۳۰ روز اجرای پروژه حفظ کرد.
-                    </p>
-
-                    <h3>اقدامات انجام‌شده</h3>
-
-                    <ul>
-                        <li>برنامه‌ریزی اولیه و تعیین زمان‌بندی دقیق</li>
-                        <li>اجرای مرحله‌به‌مرحله با گزارش‌دهی هفتگی</li>
-                        <li>کنترل کیفیت مستمر در طول اجرا</li>
-                        <li>تحویل نهایی طبق زمان‌بندی توافق‌شده</li>
-                    </ul>
-
-                    <h3>نتیجه</h3>
-
-                    <p>
-                        پروژه بدون هیچ‌گونه تأخیری تحویل داده شد و کارفرما از کیفیت و سرعت اجرا رضایت کامل داشت.
+                        {{ project.about }}
                     </p>
 
                 </div>
 
                 <div class="main-button back-link">
-                    <a href="project-details.html">بازگشت به نمونه‌کارها</a>
+                    <a href="">
+                        بازگشت به نمونه‌کارها
+                    </a>
                 </div>
 
             </div>
+
 
             <div class="col-lg-4">
 
@@ -237,13 +233,19 @@
                 </div>
 
                 <ul style="list-style:none;padding:0;">
+
                     <li style="margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:12px;">
-                        <a href="project-arya.html" style="color:#333;font-weight:600;">اجرای خدمات شرکت آریا</a>
+                        <a href="#" style="color:#333;font-weight:600;">
+                            اجرای خدمات شرکت آریا
+                        </a>
                     </li>
 
                     <li style="margin-bottom:12px;border-bottom:1px solid #eee;padding-bottom:12px;">
-                        <a href="project-tejari.html" style="color:#333;font-weight:600;">خدمات برای مجموعه تجاری</a>
+                        <a href="#" style="color:#333;font-weight:600;">
+                            خدمات برای مجموعه تجاری
+                        </a>
                     </li>
+
                 </ul>
 
             </div>
@@ -251,7 +253,6 @@
         </div>
     </div>
 </div>
-
 
 
 <footer>
