@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ContactUsForm
 from .models import ContactUs
-from portfolio.models import Project
+from portfolio.models import Project, CompanyStats
 
 
 
@@ -27,6 +27,14 @@ def Home_page(request):
         form = ContactUsForm    
             
     projects = Project.objects.all()
-    return render(request, "Home/Home.html", {"form":form, "projects":projects})
+    
+    company_stats = CompanyStats.objects.all()
+    
+    context = {
+        "form":form,
+        "projects":projects,
+        "company_stats": company_stats
+    }
+    return render(request, "Home/Home.html", context)
 
 

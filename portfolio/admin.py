@@ -2,9 +2,9 @@ from django.contrib import admin
 
 from jalali_date.admin import ModelAdminJalaliMixin
 
-from .models import Project
+from .models import Project, CompanyStats
 
-
+admin.site.register(CompanyStats)
 
 @admin.register(Project)
 class ProjectAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):

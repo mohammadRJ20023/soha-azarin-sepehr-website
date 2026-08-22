@@ -17,7 +17,7 @@ class Project(models.Model):
     
     image = models.ImageField(upload_to='images/Projects', verbose_name="تصویر")
     
-    type = models.CharField(max_length=100, null=False, blank=False, verbose_name="نوع پروژه")
+    project_type = models.CharField(max_length=100, null=False, blank=False, verbose_name="نوع پروژه")
     
     start_time = jmodels.jDateField(verbose_name="تاریخ شروع پروژه")
     
@@ -29,16 +29,16 @@ class Project(models.Model):
     
     created_at = jmodels.jDateField(auto_now_add=True)
     
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
     
     def __str__(self):
         return self.title
     
     def save(self, *args, **kwargs):
-        
-        self.slug = slugify(self.title, allow_unicode=True)
+        if  not self.slug :
+            self.slug = slugify(self.title, allow_unicode=True)
         super(Project, self).save()
-    
+        
     @property
     def duration(self):
         
@@ -47,3 +47,16 @@ class Project(models.Model):
     
     duration.fget.short_description = "مدت اجرا"
 
+class CompanyStats(models.Model):
+    years_experience = models.PositiveIntegerField(verbose_name="سال تجربه")
+    happy_clients = models.PositiveIntegerField(verbose_name="مشتریان راضی")
+    service_hours = models.PositiveIntegerField(verbose_name="ساعت خدمات")
+    successful_projects = models.PositiveIntegerField(verbose_name="پروژه موفق", blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if self.successful_projects is None:
+            self.successful_projects = Project.objects.filter(status="پایان یافته").count()
+        super(CompanyStats, self).save()
+        
+    def __str__(self):
+        return "company stats"
