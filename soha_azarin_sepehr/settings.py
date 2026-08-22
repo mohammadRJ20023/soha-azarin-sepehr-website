@@ -40,10 +40,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     "django_cleanup.apps.CleanupConfig",
+    "jalali_date",
     
     #my app: 
     "Home.apps.HomeConfig",
-    "Services.apps.ServicesConfig"
+    "Services.apps.ServicesConfig",
+    "portfolio.apps.PortfolioConfig"
 ]
 
 MIDDLEWARE = [
