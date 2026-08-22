@@ -543,6 +543,12 @@ https://templatemo.com/tm-586-scholar
 
                 {{ form.name}}
 
+                {% if form.name.phone_number %}
+                  <div class="alert alert-danger ">{{ form.phone_number.errors }}</div>
+                {%endif%}
+
+                {{ form.phone_number}}
+
                 {% if form.email.errors %}
                   <div class="alert alert-danger ">{{ form.email.errors }}</div>
                 {%endif%}
