@@ -1,183 +1,173 @@
 {% load static %}
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
-    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/templatemo-scholar.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/owl.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- فایل CSS pagination -->
-    <link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+    <title>{{ project.title }} - sosmost</title>
 
-    <title>پروژه‌ها | SOSMOST</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/templatemo-scholar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+
+    <!--
+    TemplateMo 586 Scholar
+    https://templatemo.com/tm-586-scholar
+    Custom detail page
+    -->
+    <style>
+      .detail-content h3{margin-top:35px;margin-bottom:15px;}
+      .detail-content p{line-height:1.9;margin-bottom:18px;}
+      .detail-content ul{margin-bottom:20px;padding-right:20px;}
+      .detail-content ul li{list-style:disc;line-height:1.9;margin-bottom:8px;}
+      .detail-meta-box{background:#f7f7f9;border-radius:8px;padding:25px 30px;margin-bottom:30px;}
+      .detail-meta-box .row > div{margin-bottom:10px;}
+      .detail-meta-box span{display:block;font-size:14px;color:#888;}
+      .detail-meta-box h6{margin:0;font-weight:600;}
+      .breadcrumb-nav{margin-bottom:20px;font-size:14px;color:#888;}
+      .breadcrumb-nav a{color:#ff6b35;}
+      .detail-hero-image{width:100%;border-radius:8px;margin-bottom:30px;overflow:hidden;}
+      .detail-hero-image img{width:100%;display:block;}
+      .back-link{display:inline-block;margin-top:20px;}
+    </style>
   </head>
 
-  <body>
-    <header class="header-area header-sticky">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
-              <ul class="nav">
-                <li class="scroll-to-section"><a href="Home.html">خانه</a></li>
-                <li class="scroll-to-section">
-                  <a href="Home.html#services">خدمات</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="projects.html" class="active">نمونه‌کارها</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="Home.html#team">تیم ما</a>
-                </li>
-                <li class="scroll-to-section">
-                  <a href="Home.html#contact">تماس با ما</a>
-                </li>
-              </ul>
+<body>
 
-              <a class="menu-trigger"><span>منو</span></a>
-
-              <div class="search-input">
-                <form id="search" action="#">
-                  <input
-                    type="text"
-                    placeholder="چیزی تایپ کنید"
-                    id="searchText"
-                    name="searchKeyword"
-                  />
-                  <i class="fa fa-search"></i>
-                </form>
-              </div>
-
-              <a href="Home.html" class="logo"><h1>SOSMOST</h1></a>
-            </nav>
-          </div>
-        </div>
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-    </header>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
 
-    <div class="section events" id="events">
-      <div class="container">
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
         <div class="row">
-          <div class="col-lg-12 text-center">
-            <div class="section-heading">
-              <h6>نمونه‌کارها</h6>
-              <h2>همه پروژه‌های انجام‌شده</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="row event_box">
-          {% for project in projects %}
-          <div class="col-lg-12 col-md-6 align-self-center mb-30 event_outer">
-            <div class="item">
-              <div class="row">
-                <div class="col-lg-3">
-                  <div class="image">
-                    <img src="{{ project.image.url }}" alt="{{ project.title }}" />
-                  </div>
-                </div>
-
-                <div class="col-lg-9">
-                  <ul>
-                    <li>
-                      <span class="category">{{ project.type }}</span>
-                      <h4>{{ project.title }}</h4>
-                    </li>
-                    <li>
-                      <span>تاریخ شروع:</span>
-                      <h6>{{ project.start_time }}</h6>
-                    </li>
-                    <li>
-                      <span>مدت اجرا:</span>
-                      <h6>{{ project.duration }}</h6>
-                    </li>
-                    <li>
-                      <span>وضعیت:</span>
-                      <h6>{{ project.status }}</h6>
-                    </li>
+            <div class="col-12">
+                <nav class="main-nav">
+                    <ul class="nav">
+                      <li><a href="{% url 'Home:Home' %}">خانه</a></li>
+                      <li><a href="{% url 'Home:Home' %}#services">خدمات</a></li>
+                      <li><a href="{% url 'Home:Home' %}#courses">خدمت‌ها</a></li>
+                      <li><a href="{% url 'Home:Home' %}#team">تیم ما</a></li>
+                      <li><a href="{% url 'portfolio:project_list' %}" class="active">نمونه‌کارها</a></li>
+                      <li><a href="{% url 'Home:Home' %}#contact">تماس با ما</a></li>
                   </ul>
+                    <a class='menu-trigger'>
+                        <span>منو</span>
+                    </a>
+                    <div class="search-input">
+                      <form id="search" action="#">
+                        <input type="text" placeholder="چیزی تایپ کنید" id='searchText' name="searchKeyword" />
+                        <i class="fa fa-search"></i>
+                      </form>
+                    </div>
+                    <a href="{% url 'Home:Home' %}" class="logo">
+                        <h1>sosmost</h1>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
 
-                  <a href="{% url 'project_detail' project.slug %}">
-                    <i class="fa fa-angle-right"></i>
-                  </a>
-                </div>
+  <!-- ***** Banner Start ***** -->
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="item item-1">
+            <div class="header-text">
+              <span class="category">{{ project.project_type }}</span>
+              <h2 class="text-header-pic">{{ project.title }}</h2>
+              <p>{{ project.about|truncatewords:20 }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Banner End ***** -->
+
+  <div class="section about-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          
+
+          <div class="detail-hero-image">
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+          </div>
+
+          <div class="detail-meta-box">
+            <div class="row">
+              <div class="col-md-3">
+                <span>نوع پروژه</span>
+                <h6>{{ project.project_type }}</h6>
+              </div>
+              <div class="col-md-3">
+                <span>تاریخ شروع</span>
+                <h6>{{ project.start_time }}</h6>
+              </div>
+              <div class="col-md-3">
+                <span>مدت اجرا</span>
+                <h6>{{ project.duration }} روز</h6>
+              </div>
+              <div class="col-md-3">
+                <span>وضعیت</span>
+                <h6>{{ project.status }}</h6>
               </div>
             </div>
           </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
 
-    <!-- Pagination -->
-    <div class="section pagination-section" id="pagination">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="custom-pagination">
+          <div class="detail-content">
+            <h3>درباره پروژه</h3>
+            <p>{{ project.about|linebreaks }}</p>
+          </div>
 
-              <li>
-                {% if page_obj.has_previous %}
-                  <a href="?page={{ page_obj.previous_page_number }}" class="page-link page-arrow">
-                    <i class="fa fa-angle-left"></i>
-                  </a>
-                {% else %}
-                  <span class="page-link page-arrow disabled">
-                    <i class="fa fa-angle-left"></i>
-                  </span>
-                {% endif %}
-              </li>
-
-              {% for num in page_obj.paginator.page_range %}
-                <li>
-                  <a href="?page={{ num }}" class="page-link {% if page_obj.number == num %}active{% endif %}">
-                    {{ num }}
-                  </a>
-                </li>
-              {% endfor %}
-
-              <li>
-                {% if page_obj.has_next %}
-                  <a href="?page={{ page_obj.next_page_number }}" class="page-link page-arrow">
-                    <i class="fa fa-angle-right"></i>
-                  </a>
-                {% else %}
-                  <span class="page-link page-arrow disabled">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                {% endif %}
-              </li>
-
-            </ul>
+          <div class="main-button back-link">
+            <a href="{% url 'portfolio:project_list' %}">بازگشت به نمونه‌کارها</a>
           </div>
         </div>
-      </div>
-    </div>
 
-    <footer>
-      <div class="container">
-        <div class="col-lg-12">
-          <p>کپی‌رایت © ۱۴۰۵ سازمان SOSMOST. تمامی حقوق محفوظ است.</p>
+          
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/owl-carousel.js' %}"></script>
-    <script src="{% static 'js/animation.js' %}"></script>
-    <script src="{% static 'js/custom.js' %}"></script>
+  
+
+  <footer>
+    <div class="container">
+      <div class="col-lg-12">
+        <p>کپی‌رایت © ۱۴۰۴ سازمان sosmost. تمامی حقوق محفوظ است. &nbsp;&nbsp;&nbsp; طراحی: <a href="{% url 'Home:Home' %}" rel="nofollow" target="_blank">sosmost</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{% static 'jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/isotope.min.js' %}"></script>
+  <script src="{% static 'js/owl-carousel.js' %}"></script>
+  <script src="{% static 'js/counter.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
   </body>
 </html>
