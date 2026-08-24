@@ -368,7 +368,7 @@ https://templatemo.com/tm-586-scholar
         <div class="wrapper">
           {% for stats in company_stats %}
             <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6 ">
               <div class="counter">
                 <h2 class="timer count-title count-number" data-to="{{ stats.successful_projects }}" data-speed="1000"></h2>
                 <p class="count-text">پروژه موفق</p>
@@ -401,71 +401,54 @@ https://templatemo.com/tm-586-scholar
   </div>
 </div>
 
-  <div class="team section" id="team">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="team-member">
-          <div class="main-content">
-            <img src="{% static "/images/member-01.jpg" %}" alt="">
-            <span class="category">مدیر پروژه</span>
-            <h4>علی رضایی</h4>
-            <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
+<!-- =========================
+     TEAM SECTION
+========================= -->
+
+<div class="team section" id="team">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-heading text-center">
+                    <h6>تیم ما</h6>
+                    <h2>با اعضای تیم ما آشنا شوید</h2>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="team-member">
-          <div class="main-content">
-            <img src="{% static "/images/member-02.jpg" %}" alt="">
-            <span class="category">کارشناس خدمات</span>
-            <h4>سارا محمدی</h4>
-            <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
+
+        <div class="team-carousel">
+            <div class="team-carousel-track">
+                {% for member in team_member %}
+                <div class="team-carousel-slide">
+                    <div class="team-member">
+                        <div class="main-content">
+                            <img src="{{ member.image.url }}" alt="{{ member.full_name }}">
+                            <span class="category">{{ member.job }}</span>
+                            <h4>{{ member.full_name }}</h4>
+
+                            <ul class="social-icons">
+                                
+                                <li><a href="{{ member.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                                
+                                <li><a href="{{ member.twitter_url }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                                
+                                <li><a href="{{ member.linkedin_url }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <button type="button" class="team-carousel-prev" aria-label="عضو قبلی"><i class="fa fa-angle-right"></i></button>
+            <button type="button" class="team-carousel-next" aria-label="عضو بعدی"><i class="fa fa-angle-left"></i></button>
+            <div class="team-carousel-dots"></div>
         </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="team-member">
-          <div class="main-content">
-            <img src="{% static "/images/member-03.jpg" %}" alt="">
-            <span class="category">کارشناس فنی</span>
-            <h4>محمد کریمی</h4>
-            <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="team-member">
-          <div class="main-content">
-            <img src="{% static "/images/member-04.jpg" %}" alt="">
-            <span class="category">مدیر پشتیبانی</span>
-            <h4>نگار احمدی</h4>
-            <ul class="social-icons">
-              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
 
     </div>
-  </div>
 </div>
-
-  
 
   <div class="section events" id="events">
   <div class="container">
@@ -601,6 +584,9 @@ https://templatemo.com/tm-586-scholar
   <script src="{% static "/js/isotope.min.js" %}"></script>
   <script src="{% static "/js/owl-carousel.js" %}"></script>
   <script src="{% static "/js/counter.js" %}"></script>
+
+  <script src="{% static "/js/team-slider.js" %}"></script>
+
   <script src="{% static "/js/custom.js" %}"></script>
 
   </body>

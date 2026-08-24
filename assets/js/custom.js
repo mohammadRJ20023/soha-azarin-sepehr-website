@@ -89,6 +89,7 @@
 		}
       }
 	});
+	
 
 
 	// Menu Dropdown Toggle
@@ -214,5 +215,5 @@
             });
         });
     }
-
+	
 })(window.jQuery);

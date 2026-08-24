@@ -1964,3 +1964,722 @@ body {
     width: 95%;
   }
 }
+/* =========================================================
+   TEAM CAROUSEL
+========================================================= */
+
+.team-carousel {
+    position: relative;
+
+    width: 100%;
+
+    padding: 100px 55px 65px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TRACK
+========================================================= */
+
+.team-carousel-track {
+
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    gap: 25px;
+
+    width: 100%;
+
+    direction: ltr;
+
+    transition: transform 0.45s ease;
+
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.team-carousel-slide {
+
+    flex: 0 0 calc((100% - 75px) / 4);
+
+    width: calc((100% - 75px) / 4);
+
+    min-width: 0;
+
+    direction: rtl;
+
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.team-carousel-slide .team-member {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 300px;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.team-carousel-slide .main-content {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 300px;
+
+    box-sizing: border-box;
+
+    border-radius: 25px;
+
+    padding: 140px 30px 40px;
+
+    background-color: #f1f0fe;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.team-carousel-slide .team-member img {
+
+    position: absolute;
+
+    top: -90px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 180px;
+
+    height: 180px;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 5px solid #fff;
+
+    z-index: 5;
+
+    transition: top 0.3s ease;
+
+}
+
+
+/* Hover */
+
+.team-carousel-slide .team-member:hover img {
+
+    top: -100px;
+
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.team-carousel-slide .category {
+
+    display: block;
+
+    color: #7a6ad8;
+
+    font-size: 15px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.team-carousel-slide h4 {
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    margin-top: 8px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.team-carousel-slide .social-icons {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 0;
+
+    margin: 0;
+
+    list-style: none;
+
+}
+
+
+.team-carousel-slide .social-icons li {
+
+    display: inline-block;
+
+    margin: 0 2px;
+
+}
+
+
+.team-carousel-slide .social-icons a {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border-radius: 50%;
+
+    background-color: #fff;
+
+    color: #7a6ad8;
+
+    font-size: 18px;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+
+}
+
+
+.team-carousel-slide .social-icons a:hover {
+
+    background-color: #7a6ad8;
+
+    color: #fff;
+
+}
+
+
+/* =========================================================
+   ARROWS
+========================================================= */
+
+.team-carousel-prev,
+.team-carousel-next {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-35%);
+
+    z-index: 20;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #7a6ad8;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.team-carousel-prev:hover,
+.team-carousel-next:hover {
+
+    background: #7a6ad8;
+
+    color: #fff;
+
+}
+
+
+.team-carousel-prev:disabled,
+.team-carousel-next:disabled {
+
+    opacity: 0.35;
+
+    cursor: default;
+
+}
+
+
+/* راست */
+
+.team-carousel-prev {
+
+    right: 0;
+
+}
+
+
+/* چپ */
+
+.team-carousel-next {
+
+    left: 0;
+
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.team-carousel-dots {
+
+    position: absolute;
+
+    bottom: 15px;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+}
+
+
+.team-carousel-dot {
+
+    width: 9px;
+
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #d2cfee;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+}
+
+
+.team-carousel-dot.active {
+
+    width: 22px;
+
+    border-radius: 10px;
+
+    background: #7a6ad8;
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.team-empty {
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 50px;
+
+}
+
+
+/* =========================================================
+   3 CARDS
+========================================================= */
+
+@media (max-width: 1199px) {
+
+    .team-carousel-slide {
+
+        flex-basis: calc((100% - 50px) / 3);
+
+        width: calc((100% - 50px) / 3);
+
+    }
+
+}
+
+
+/* =========================================================
+   2 CARDS
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .team-carousel-slide {
+
+        flex-basis: calc((100% - 25px) / 2);
+
+        width: calc((100% - 25px) / 2);
+
+    }
+
+}
+
+
+/* =========================================================
+   1 CARD
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .team-carousel {
+
+        padding-left: 45px;
+
+        padding-right: 45px;
+
+        padding-top: 95px;
+
+    }
+
+
+    .team-carousel-slide {
+
+        flex-basis: 100%;
+
+        width: 100%;
+
+    }
+
+
+    .team-carousel-slide .main-content {
+
+        padding-left: 20px;
+
+        padding-right: 20px;
+
+    }
+
+
+    .team-carousel-prev,
+    .team-carousel-next {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 18px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .team-carousel {
+
+        padding-left: 35px;
+
+        padding-right: 35px;
+
+    }
+
+
+    .team-carousel-slide .team-member img {
+
+        width: 165px;
+
+        height: 165px;
+
+        top: -82px;
+
+    }
+
+
+    .team-carousel-slide .main-content {
+
+        padding-top: 125px;
+
+    }
+
+}
+/* =========================================
+   TEAM SLIDER
+========================================= */
+
+.team-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Viewport */
+.team-slider .swiper {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Wrapper */
+.team-slider .swiper-wrapper {
+    display: flex;
+    align-items: stretch;
+
+    gap: 25px;
+
+    width: max-content;
+
+    overflow: visible;
+
+    transition: transform 0.45s ease;
+
+    will-change: transform;
+}
+
+/* Slide */
+.team-slider .swiper-slide {
+    flex: 0 0 calc((100vw - 25px * 3 - 50px) / 4);
+
+    width: calc((100vw - 25px * 3 - 50px) / 4);
+
+    min-width: 0;
+
+    height: auto;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1200px) {
+
+    .team-slider .swiper-slide {
+        flex: 0 0 calc((100% - 75px) / 4);
+
+        width: calc((100% - 75px) / 4);
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .team-slider .swiper-wrapper {
+        gap: 20px;
+    }
+
+    .team-slider .swiper-slide {
+        flex: 0 0 calc((100% - 40px) / 3);
+
+        width: calc((100% - 40px) / 3);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .team-slider .swiper-wrapper {
+        gap: 15px;
+    }
+
+    .team-slider .swiper-slide {
+        flex: 0 0 calc((100% - 15px) / 2);
+
+        width: calc((100% - 15px) / 2);
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .team-slider .swiper-wrapper {
+        gap: 15px;
+    }
+
+    .team-slider .swiper-slide {
+        flex: 0 0 100%;
+
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   NAVIGATION BUTTONS
+========================================= */
+
+.team-slider .swiper-button-prev,
+.team-slider .swiper-button-next {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 20;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+
+    user-select: none;
+}
+
+
+/* Left */
+.team-slider .swiper-button-prev {
+    left: 10px;
+}
+
+
+/* Right */
+.team-slider .swiper-button-next {
+    right: 10px;
+}
+
+
+/* Disabled */
+.team-slider .swiper-button-disabled {
+    opacity: 0.35;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   REMOVE SWIPER DEFAULT ARROWS
+========================================= */
+
+.team-slider .swiper-button-prev::after,
+.team-slider .swiper-button-next::after {
+    display: none;
+}
+
+
+/* =========================================
+   OPTIONAL ARROW ICONS
+========================================= */
+
+.team-slider .swiper-button-prev i,
+.team-slider .swiper-button-next i {
+    font-size: 20px;
+
+    line-height: 1;
+}
+
+
+/* =========================================
+   IMPORTANT
+========================================= */
+
+.team-slider .swiper-wrapper {
+    scroll-behavior: auto !important;
+
+    scroll-snap-type: none !important;
+}
+
+.team-slider .swiper-slide {
+    scroll-snap-align: none !important;
+}

@@ -7,7 +7,7 @@ class TeamMember(models.Model):
     job  = models.CharField(max_length=100, verbose_name="سمت")
     image = models.ImageField(upload_to="images/team", verbose_name="تصویر ")
     
-    inestagram = models.URLField(blank=True, verbose_name="اینستاگرام")
+    instagram = models.URLField(blank=True, verbose_name="اینستاگرام")
     linkedin_url = models.URLField(blank=True, verbose_name="لینکدین")
     twitter_url = models.URLField(blank=True, verbose_name="توییتر")
     

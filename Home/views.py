@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .forms import ContactUsForm
-from .models import ContactUs, CompanyStats
+from .forms import ContactUsForm 
+from .models import ContactUs, CompanyStats, TeamMember
 from portfolio.models import Project
 
 
@@ -29,11 +29,13 @@ def Home_page(request):
     projects = Project.objects.all().order_by("-created_at")[:3]
     
     company_stats = CompanyStats.objects.all()
+    team_member = TeamMember.objects.all()
     
     context = {
         "form":form,
         "projects":projects,
-        "company_stats": company_stats
+        "company_stats": company_stats,
+        "team_member":team_member
     }
     return render(request, "Home/Home.html", context)
 
