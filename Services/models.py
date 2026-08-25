@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.text import slugify
+
 
 
 
@@ -15,7 +17,7 @@ class ExecutiveUnit(models.Model):
     
     
 class Service(models.Model):
-    title = models.CharField(null=False ,blank=False, verbose_name="عنوان")
+    title = models.CharField( null=False ,blank=False, verbose_name="عنوان")
     executive_unit =  models.ForeignKey(
         ExecutiveUnit,
         on_delete=models.SET_NULL,
@@ -25,17 +27,15 @@ class Service(models.Model):
         verbose_name="واحد اجرایی"
         )
     description = models.TextField(null=False, blank=False)
+    task = models.CharField(verbose_name="خدمات اریه شده در پروژه")
+    slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
     
     def __str__(self):
         return self.title
     
-class ServiceTask(models.Model):
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        return super().save()
     
-    service = models.ForeignKey(
-        Service,
-        on_delete=models.CASCADE,
-        related_name="tasks", 
-        verbose_name="خدمات اریه شده در پروژه"
-        )
-    title = models.CharField(max_length=500, null=False, blank=False, verbose_name="عنوان")
+
     
