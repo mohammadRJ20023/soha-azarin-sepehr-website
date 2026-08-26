@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
     <link rel="stylesheet" href="{% static "/css/footer.css" %}">
+    <link rel="stylesheet" href="{% static "/css/site-header.css" %}">
     <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/pagination.css' %}" />
 
@@ -30,7 +31,7 @@
     -->
   </head>
 
-  <body>
+  <body class = "inner-page">
 
     <!-- ***** Preloader Start ***** -->
     <div id="js-preloader" class="js-preloader">
@@ -46,46 +47,171 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area header-sticky no-banner-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <nav class="main-nav">
+    
+{% load static %}
 
-              <!-- ***** Menu Start ***** -->
-              <ul class="nav">
-                <li class="scroll-to-section"><a href="{% url 'Home:Home' %}#top">خانه</a></li>
-                <li class="scroll-to-section"><a href="{% url 'Home:Home' %}#services">خدمات</a></li>
-                <li class="scroll-to-section"><a href="{% url 'Home:Home' %}#courses">خدمت‌ها</a></li>
-                <li class="scroll-to-section"><a href="{% url 'Home:Home' %}#team">تیم ما</a></li>
-                <li class="scroll-to-section"><a href="{% url 'portfolio:project_list' %}" class="active">نمونه‌کارها</a></li>
-                <li class="scroll-to-section"><a href="{% url 'Home:Home' %}#contact">همین حالا ثبت‌نام کنید!</a></li>
-              </ul>
-              <a class="menu-trigger">
-                <span>منو</span>
-              </a>
-              <!-- ***** Menu End ***** -->
+<header class="site-header" id="site-header">
 
-              <!-- ***** Search Start ***** -->
-              <div class="search-input">
-                <form id="search" action="#">
-                  <input type="text" placeholder="چیزی تایپ کنید" id="searchText" name="searchKeyword" />
-                  <i class="fa fa-search"></i>
-                </form>
-              </div>
-              <!-- ***** Search End ***** -->
+    <div class="site-header__container">
 
-              <!-- ***** Logo Start ***** -->
-              <a href="{% url 'Home:Home' %}" class="logo">
-                <h1>sosmost</h1>
-              </a>
-              <!-- ***** Logo End ***** -->
 
-            </nav>
-          </div>
+        <!-- =========================
+             LOGO
+        ========================== -->
+
+        <a
+            href="{% url 'Home:Home' %}"
+            class="site-header__logo"
+        >
+
+            <span>
+                سها آذرین سپهر
+            </span>
+
+        </a>
+
+
+        <!-- =========================
+             NAVIGATION
+        ========================== -->
+
+        <nav
+            class="site-header__nav"
+            id="site-navigation"
+        >
+
+            <ul class="site-header__menu">
+
+
+                <li>
+
+                    <a href="{% url 'Home:Home' %}#top">
+
+                        خانه
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="{% url 'Home:Home' %}#services">
+
+                        خدمات
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="{% url 'Home:Home' %}#courses">
+
+                        خدمت‌ها
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="{% url 'Home:Home' %}#team">
+
+                        تیم ما
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a
+                        href="{% url 'portfolio:project_list' %}"
+                        class="active"
+                    >
+
+                        نمونه‌کارها
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="{% url 'Home:Home' %}#contact">
+
+                        تماس با ما
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </nav>
+
+
+        <!-- =========================
+             SEARCH
+        ========================== -->
+
+        <div class="site-header__search">
+
+            <form
+                method="get"
+                action="#"
+            >
+
+                <input
+                    type="search"
+                    name="q"
+                    placeholder="جستجو..."
+                    aria-label="جستجو"
+                >
+
+
+                <button
+                    type="submit"
+                    aria-label="جستجو"
+                >
+
+                    <i class="fa fa-search"></i>
+
+                </button>
+
+            </form>
+
         </div>
-      </div>
-    </header>
+
+
+        <!-- =========================
+             MOBILE MENU
+        ========================== -->
+
+        <button
+            type="button"
+            class="site-header__toggle"
+            id="site-header-toggle"
+            aria-label="باز کردن منو"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+    </div>
+
+</header>
     <!-- ***** Header Area End ***** -->
 
     <div class="section events" id="events" style="padding-top: 120px;">
@@ -405,6 +531,8 @@
     <script src="{% static 'js/owl-carousel.js' %}"></script>
     <script src="{% static 'js/counter.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
+    <script src="{% static "/js/site-header.js" %}"></script>
+
 
   </body>
 </html>
