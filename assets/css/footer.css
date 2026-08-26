@@ -1,0 +1,319 @@
+/* =========================================================
+   SOHA AZARIN SEPEHR
+   PROFESSIONAL FOOTER (fixed to match actual HTML classes)
+========================================================= */
+
+.professional-footer {
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    padding: 0;
+    min-height: 0;
+    background: linear-gradient(135deg, #6858c4 0%, #7a6ad8 55%, #8878df 100%);
+    border-radius: 120px 120px 0 0;
+    overflow: hidden;
+    color: #ffffff;
+}
+
+.professional-footer p {
+    margin: 0;
+    line-height: 1.9;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.professional-footer .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* -----------------------------------------
+   گرید اصلی فوتر (این بخش قبلاً کلاً حذف شده بود)
+----------------------------------------- */
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+    gap: 30px;
+    padding-top: 65px;
+    padding-bottom: 45px;
+}
+
+/* -----------------------------------------
+   عنوان‌ها
+----------------------------------------- */
+.professional-footer h4 {
+    position: relative;
+    margin: 0 0 25px;
+    padding-bottom: 13px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.professional-footer h4::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 42px;
+    height: 3px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+/* -----------------------------------------
+   معرفی شرکت (footer-brand بجای footer-about)
+----------------------------------------- */
+.footer-brand {
+    padding-left: 20px;
+}
+
+.footer-logo {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    max-width: 430px;
+    font-size: 14px;
+    line-height: 2.2;
+}
+
+/* -----------------------------------------
+   شبکه‌های اجتماعی
+----------------------------------------- */
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: #ffffff;
+    color: #7a6ad8;
+    transform: translateY(-4px);
+}
+
+/* -----------------------------------------
+   ستون‌های لینک (footer-column بجای footer-links)
+----------------------------------------- */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 11px;
+}
+
+.footer-column ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-decoration: none;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-column ul li a i {
+    font-size: 12px;
+    color: #ffffff;
+    transition: transform 0.25s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+    transform: translateX(-4px);
+}
+
+.footer-column ul li a:hover i {
+    transform: translateX(-3px);
+}
+
+/* -----------------------------------------
+   اطلاعات تماس (footer-contact-item بجای contact-item)
+----------------------------------------- */
+.footer-contact {
+    padding-right: 5px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.footer-contact-icon {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footer-contact-item span {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.footer-contact-item p,
+.footer-contact-item a {
+    display: block;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 13px;
+    line-height: 1.9;
+    text-decoration: none;
+}
+
+.footer-contact-item a:hover {
+    color: #ffffff;
+}
+
+/* -----------------------------------------
+   بخش پایین
+----------------------------------------- */
+.footer-bottom {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.17);
+    padding: 22px 0 25px;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.9;
+}
+
+.footer-bottom p strong {
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footer-bottom-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-bottom-links a {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom-links span::before {
+    content: "|";
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* -----------------------------------------
+   دکورهای ظریف (footer-decoration بجای ::after)
+----------------------------------------- */
+.footer-decoration {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.025), 0 0 0 80px rgba(255, 255, 255, 0.018);
+    pointer-events: none;
+}
+
+.footer-decoration-left {
+    left: -150px;
+    bottom: -180px;
+}
+
+.footer-decoration-right {
+    right: -150px;
+    top: -100px;
+}
+
+/* -----------------------------------------
+   تبلت
+----------------------------------------- */
+@media (max-width: 991px) {
+    .professional-footer {
+        margin-top: 70px;
+        border-radius: 80px 80px 0 0;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 55px;
+        padding-bottom: 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        padding-left: 0;
+    }
+}
+
+/* -----------------------------------------
+   موبایل
+----------------------------------------- */
+@media (max-width: 767px) {
+    .professional-footer {
+        margin-top: 55px;
+        border-radius: 50px 50px 0 0;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+        padding-bottom: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 0 25px;
+    }
+}

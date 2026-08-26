@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{% static "/css/owl.css" %}">
     <link rel="stylesheet" href="{% static "/css/animate.css" %}">
     <link rel="stylesheet" href="{% static "/css/swiper-bundle.min.css" %}">
+    <link rel="stylesheet" href="{% static "/css/footer.css" %}"> 
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 <!--
 TemplateMo 586 Scholar
@@ -271,92 +272,27 @@ https://templatemo.com/tm-586-scholar
       </div>
     </div>
     <ul class="event_filter">
-      <li>
-        <a class="is_active" href="#!" data-filter="*">همه خدمات</a>
-      </li>
-      <li>
-        <a href="#!" data-filter=".design">مشاوره</a>
-      </li>
-      <li>
-        <a href="#!" data-filter=".development">اجرا</a>
-      </li>
-      <li>
-        <a href="#!" data-filter=".wordpress">پشتیبانی</a>
-      </li>
+      <li><a class="active" href="?unit=" data-unit="">همه خدمات</a></li>
+        {% for unit in executive_units %}
+          <li><a href="?unit={{ unit.id }}" data-unit="{{ unit.id }}">{{ unit.name }}</a></li>
+        {% endfor %}
     </ul>
-    <div class="row event_box">
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design">
+
+    <div class="row event_box" id="services-grid">
+      {% for service in services %}
+        <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer" data-unit="{{ service.executive_unit_id }}">
         <div class="events_item">
           <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-01.jpg" %}" alt=""></a>
-            <span class="category">مشاوره</span>
+            <a href="#"><img src="{{ service.image.url }}" alt=""></a>
+            <span class="category">{{ service.executive_unit }}</span>
           </div>
           <div class="down-content">
-            <span class="author">تیم مشاوره</span>
-            <h4>مشاوره تخصصی کسب‌وکار</h4>
+            <span class="author">{{ service.executive_unit }}</span>
+            <h4>{{ service.title }}</h4>
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-02.jpg" %}" alt=""></a>
-            <span class="category">اجرا</span>
-          </div>
-          <div class="down-content">
-            <span class="author">تیم اجرایی</span>
-            <h4>اجرای پروژه‌های تخصصی</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 design wordpress">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-03.jpg" %}" alt=""></a>
-            <span class="category">پشتیبانی</span>
-          </div>
-          <div class="down-content">
-            <span class="author">واحد پشتیبانی</span>
-            <h4>پشتیبانی و نگهداری خدمات</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 development">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-04.jpg" %}" alt=""></a>
-            <span class="category">اجرا</span>
-          </div>
-          <div class="down-content">
-            <span class="author">تیم پروژه</span>
-            <h4>مدیریت و اجرای پروژه</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress development">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-05.jpg" %}" alt=""></a>
-            <span class="category">پشتیبانی</span>
-          </div>
-          <div class="down-content">
-            <span class="author">واحد خدمات</span>
-            <h4>خدمات پس از اجرا</h4>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 wordpress design">
-        <div class="events_item">
-          <div class="thumb">
-            <a href="#"><img src="{% static "/images/course-06.jpg" %}" alt=""></a>
-            <span class="category">مشاوره</span>
-          </div>
-          <div class="down-content">
-            <span class="author">کارشناسان ما</span>
-            <h4>راهکارهای اختصاصی سازمانی</h4>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -514,12 +450,7 @@ https://templatemo.com/tm-586-scholar
           <h6>تماس با ما</h6>
           <h2>برای دریافت مشاوره و ثبت درخواست با ما در ارتباط باشید</h2>
           <p>کارشناسان ما آماده پاسخگویی به سوالات شما و ارائه بهترین راهکار متناسب با نیازتان هستند. کافیست فرم روبه‌رو را تکمیل کنید تا در کوتاه‌ترین زمان با شما تماس بگیریم.</p>
-          <div class="special-offer">
-            <span class="offer">۲۴<br><em>ساعته</em></span>
-            <h6>پشتیبانی: <em>۷ روز هفته</em></h6>
-            <h4>مشاوره اولیه <em>رایگان</em></h4>
-            <a href="#"><i class="fa fa-angle-right"></i></a>
-          </div>
+          
         </div>
       </div>
       <div class="col-lg-6">
@@ -570,14 +501,220 @@ https://templatemo.com/tm-586-scholar
   </div>
 </div>
 
-  <footer>
-    <div class="container">
-      <div class="col-lg-12">
-        <p>کپی‌رایت © ۱۴۰۴ سازمان sosmost. تمامی حقوق محفوظ است. &nbsp;&nbsp;&nbsp; طراحی: <a href="index.html" rel="nofollow" target="_blank">sosmost</a></p>
-      </div>
-    </div>
-  </footer>
+  <footer class="professional-footer">
 
+  <div class="footer-decoration footer-decoration-right"></div>
+  <div class="footer-decoration footer-decoration-left"></div>
+
+  <div class="container">
+
+    <div class="footer-main">
+
+      <!-- معرفی شرکت -->
+      <div class="footer-brand">
+
+        <a href="#top" class="footer-logo">
+          سها آذرین سپهر
+        </a>
+
+        <p>
+          شرکت سها آذرین سپهر با بهره‌گیری از نیروهای متخصص و
+          ارائه خدمات حرفه‌ای، در زمینه خدمات اداری، فضای سبز،
+          خدمات عمومی، تأمین نیروی انسانی و اجرای پروژه‌های تخصصی
+          در کنار سازمان‌ها و مجموعه‌های مختلف فعالیت می‌کند.
+        </p>
+
+        <div class="footer-social">
+
+          <a href="#" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="#" aria-label="Telegram">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+
+          <a href="#" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- خدمات -->
+      <div class="footer-column">
+
+        <h4>خدمات ما</h4>
+
+        <ul>
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              خدمات اداری
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              خدمات فضای سبز
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              تهیه و توزیع غذا
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              خدمات نظافت و بهداشت
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              تأمین نیروی انسانی
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- دسترسی سریع -->
+      <div class="footer-column">
+
+        <h4>دسترسی سریع</h4>
+
+        <ul>
+          <li>
+            <a href="#top">
+              <i class="fa fa-angle-left"></i>
+              صفحه اصلی
+            </a>
+          </li>
+
+          <li>
+            <a href="#services">
+              <i class="fa fa-angle-left"></i>
+              خدمات
+            </a>
+          </li>
+
+          <li>
+            <a href="#team">
+              <i class="fa fa-angle-left"></i>
+              تیم ما
+            </a>
+          </li>
+
+          <li>
+            <a href="{% url 'portfolio:project_list' %}">
+              <i class="fa fa-angle-left"></i>
+              پروژه‌ها
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              <i class="fa fa-angle-left"></i>
+              تماس با ما
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- اطلاعات تماس -->
+      <div class="footer-contact">
+
+        <h4>ارتباط با ما</h4>
+
+        <div class="footer-contact-item">
+
+          <div class="footer-contact-icon">
+            <i class="fa fa-map-marker"></i>
+          </div>
+
+          <div>
+            <span>آدرس</span>
+            <p>آدرس شرکت سها آذرین سپهر</p>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <div class="footer-contact-icon">
+            <i class="fa fa-phone"></i>
+          </div>
+
+          <div>
+            <span>تلفن تماس</span>
+            <a href="tel:07100000000">
+              ۰۷۱-۰۰۰۰۰۰۰۰
+            </a>
+          </div>
+
+        </div>
+
+
+        <div class="footer-contact-item">
+
+          <div class="footer-contact-icon">
+            <i class="fa fa-envelope"></i>
+          </div>
+
+          <div>
+            <span>ایمیل</span>
+            <a href="mailto:info@sohaazarin.ir">
+              info@sohaazarin.ir
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- نوار پایین -->
+
+    <div class="footer-bottom">
+
+      <p>
+        © ۱۴۰۵ تمامی حقوق برای
+        <strong>شرکت سها آذرین سپهر</strong>
+        محفوظ است.
+      </p>
+
+      <div class="footer-bottom-links">
+
+        <a href="#">حریم خصوصی</a>
+
+        <span></span>
+
+        <a href="#">قوانین و مقررات</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
   <script src="{% static "/jquery/jquery.min.js" %}"></script>
@@ -589,6 +726,7 @@ https://templatemo.com/tm-586-scholar
   <script src="{% static "/js/team-slider.js" %}"></script>
 
   <script src="{% static "/js/custom.js" %}"></script>
+  <script src="{% static "/js/service-filter.js" %}"></script>
 
   </body>
 </html>

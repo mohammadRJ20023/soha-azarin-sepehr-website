@@ -10,14 +10,8 @@ from Services.models import Service, ExecutiveUnit
 
 def Home_page(request):
     
-    if request.method == "GET":
-        executive_units = ExecutiveUnit.objects.all()
-        selected_unit = request.GET.get("unit")
-        
-        if selected_unit:
-            services = Service.objects.filter(executive_unit=selected_unit)
-        else:
-            services = Service.objects.all()
+    
+    
         
 
     
@@ -42,6 +36,8 @@ def Home_page(request):
     
     company_stats = CompanyStats.objects.all()
     team_member = TeamMember.objects.all()
+    services = Service.objects.all()
+    executive_units = ExecutiveUnit.objects.all()
     
     context = {
         "form":form,
@@ -49,7 +45,8 @@ def Home_page(request):
         "company_stats": company_stats,
         "team_member":team_member,
         "services" : services,
-        "executive_units":executive_units
+        "executive_units":executive_units,
+    
     }
     return render(request, "Home/Home.html", context)
 

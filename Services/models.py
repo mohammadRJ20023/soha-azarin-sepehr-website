@@ -26,6 +26,7 @@ class Service(models.Model):
         related_name="services",
         verbose_name="واحد اجرایی"
         )
+    image = models.ImageField(upload_to="images/services")
     description = models.TextField(null=False, blank=False)
     task = models.CharField(verbose_name="خدمات اریه شده در پروژه")
     slug = models.SlugField(unique=True, blank=True, allow_unicode=True)
