@@ -1,161 +1,11 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <title>{{ project.title }} - sosmost</title>
-
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/fontawesome.css' %}">
-    <link rel="stylesheet" href="{% static 'css/templatemo-scholar.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static "/css/footer.css" %}">
-    <link rel="stylesheet" href="{% static "/css/site-header.css" %}">
-    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
-
-    <!--
-    TemplateMo 586 Scholar
-    https://templatemo.com/tm-586-scholar
-    Custom detail page
-    -->
-    <style>
-      .detail-content h3{margin-top:35px;margin-bottom:15px;}
-      .detail-content p{line-height:1.9;margin-bottom:18px;}
-      .detail-content ul{margin-bottom:20px;padding-right:20px;}
-      .detail-content ul li{list-style:disc;line-height:1.9;margin-bottom:8px;}
-      .detail-meta-box{background:#f7f7f9;border-radius:8px;padding:25px 30px;margin-bottom:30px;}
-      .detail-meta-box .row > div{margin-bottom:10px;}
-      .detail-meta-box span{display:block;font-size:14px;color:#888;}
-      .detail-meta-box h6{margin:0;font-weight:600;}
-      .breadcrumb-nav{margin-bottom:20px;font-size:14px;color:#888;}
-      .breadcrumb-nav a{color:#ff6b35;}
-      .detail-hero-image{width:100%;border-radius:8px;margin-bottom:30px;overflow:hidden;}
-      .detail-hero-image img{width:100%;display:block;}
-      .back-link{display:inline-block;margin-top:20px;}
-    </style>
-  </head>
-
-<body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-   
-<header class="site-header" id="site-header">
-
-    <div class="site-header__container">
-
-        <!-- Logo -->
-        <a href="{% url 'Home:Home' %}" class="site-header__logo">
-            <span>سها آذرین سپهر</span>
-        </a>
 
 
-        <!-- Navigation -->
-        <nav class="site-header__nav" id="site-navigation">
-
-            <ul class="site-header__menu">
-
-                <li>
-                    <a href="{% url 'Home:Home' %}#top">
-                        خانه
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'Home:Home' %}#services">
-                        خدمات
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'Home:Home' %}#courses">
-                        خدمت‌ها
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'Home:Home' %}#team">
-                        تیم ما
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'portfolio:project_list' %}">
-                        نمونه‌کارها
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{% url 'Home:Home' %}#contact">
-                        تماس با ما
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
 
 
-        <!-- Search -->
-        <div class="site-header__search">
+{% block content %}
 
-            <form action="#" method="get">
-
-                <input
-                    type="search"
-                    name="q"
-                    placeholder="جستجو..."
-                    aria-label="جستجو"
-                >
-
-                <button type="submit" aria-label="جستجو">
-                    <i class="fa fa-search"></i>
-                </button>
-
-            </form>
-
-        </div>
-
-
-        <!-- Mobile Button -->
-        <button
-            type="button"
-            class="site-header__toggle"
-            id="site-header-toggle"
-            aria-label="باز کردن منو"
-            aria-expanded="false"
-        >
-
-            <span></span>
-            <span></span>
-            <span></span>
-
-        </button>
-
-    </div>
-
-</header>
-  <!-- ***** Header Area End ***** -->
-
-  <!-- ***** Banner Start ***** -->
   <div class="main-banner" id="top">
     <div class="container">
       <div class="row">
@@ -173,36 +23,41 @@
   </div>
   <!-- ***** Banner End ***** -->
 
-  <div class="section about-us">
+  <div class="section about-us project-detail-section">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8">
+        <div class="row">
+            <div class="col-lg-12 detail-main-column">
           
 
           <div class="detail-hero-image">
             <img src="{{ project.image.url }}" alt="{{ project.title }}">
           </div>
 
-          <div class="detail-meta-box">
-            <div class="row">
-              <div class="col-md-3">
-                <span>نوع پروژه</span>
-                <h6>{{ project.project_type }}</h6>
-              </div>
-              <div class="col-md-3">
-                <span>تاریخ شروع</span>
-                <h6>{{ project.start_time }}</h6>
-              </div>
-              <div class="col-md-3">
-                <span>مدت اجرا</span>
-                <h6>{{ project.duration }} روز</h6>
-              </div>
-              <div class="col-md-3">
-                <span>وضعیت</span>
-                <h6>{{ project.status }}</h6>
-              </div>
-            </div>
-          </div>
+          
+<div class="detail-meta-box">
+
+    <div class="detail-meta-item">
+        <span>نوع پروژه</span>
+        <h6>{{ project.project_type }}</h6>
+    </div>
+
+    <div class="detail-meta-item">
+        <span>تاریخ شروع</span>
+        <h6>{{ project.start_time }}</h6>
+    </div>
+
+    <div class="detail-meta-item">
+        <span>مدت اجرا</span>
+        <h6>{{ project.duration }} روز</h6>
+    </div>
+
+    <div class="detail-meta-item">
+        <span>وضعیت</span>
+        <h6>{{ project.status }}</h6>
+    </div>
+
+</div>
+
 
           <div class="detail-content">
             <h3>درباره پروژه</h3>
@@ -218,232 +73,9 @@
         </div>
       </div>
     </div>
-  </div>
+
 
   
 
-<footer class="professional-footer">
 
-  <div class="footer-decoration footer-decoration-right"></div>
-  <div class="footer-decoration footer-decoration-left"></div>
-
-  <div class="container">
-
-    <div class="footer-main">
-
-      <!-- معرفی شرکت -->
-      <div class="footer-brand">
-
-        <a href="#top" class="footer-logo">
-          سها آذرین سپهر
-        </a>
-
-        <p>
-          شرکت سها آذرین سپهر با بهره‌گیری از نیروهای متخصص و
-          ارائه خدمات حرفه‌ای، در زمینه خدمات اداری، فضای سبز،
-          خدمات عمومی، تأمین نیروی انسانی و اجرای پروژه‌های تخصصی
-          در کنار سازمان‌ها و مجموعه‌های مختلف فعالیت می‌کند.
-        </p>
-
-        <div class="footer-social">
-
-          <a href="#" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <a href="#" aria-label="Telegram">
-            <i class="fab fa-telegram-plane"></i>
-          </a>
-
-          <a href="#" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- خدمات -->
-      <div class="footer-column">
-
-        <h4>خدمات ما</h4>
-
-        <ul>
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              خدمات اداری
-            </a>
-          </li>
-
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              خدمات فضای سبز
-            </a>
-          </li>
-
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              تهیه و توزیع غذا
-            </a>
-          </li>
-
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              خدمات نظافت و بهداشت
-            </a>
-          </li>
-
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              تأمین نیروی انسانی
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <!-- دسترسی سریع -->
-      <div class="footer-column">
-
-        <h4>دسترسی سریع</h4>
-
-        <ul>
-          <li>
-            <a href="#top">
-              <i class="fa fa-angle-left"></i>
-              صفحه اصلی
-            </a>
-          </li>
-
-          <li>
-            <a href="#services">
-              <i class="fa fa-angle-left"></i>
-              خدمات
-            </a>
-          </li>
-
-          <li>
-            <a href="#team">
-              <i class="fa fa-angle-left"></i>
-              تیم ما
-            </a>
-          </li>
-
-          <li>
-            <a href="{% url 'portfolio:project_list' %}">
-              <i class="fa fa-angle-left"></i>
-              پروژه‌ها
-            </a>
-          </li>
-
-          <li>
-            <a href="#contact">
-              <i class="fa fa-angle-left"></i>
-              تماس با ما
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-
-      <!-- اطلاعات تماس -->
-      <div class="footer-contact">
-
-        <h4>ارتباط با ما</h4>
-
-        <div class="footer-contact-item">
-
-          <div class="footer-contact-icon">
-            <i class="fa fa-map-marker"></i>
-          </div>
-
-          <div>
-            <span>آدرس</span>
-            <p>آدرس شرکت سها آذرین سپهر</p>
-          </div>
-
-        </div>
-
-
-        <div class="footer-contact-item">
-
-          <div class="footer-contact-icon">
-            <i class="fa fa-phone"></i>
-          </div>
-
-          <div>
-            <span>تلفن تماس</span>
-            <a href="tel:07100000000">
-              ۰۷۱-۰۰۰۰۰۰۰۰
-            </a>
-          </div>
-
-        </div>
-
-
-        <div class="footer-contact-item">
-
-          <div class="footer-contact-icon">
-            <i class="fa fa-envelope"></i>
-          </div>
-
-          <div>
-            <span>ایمیل</span>
-            <a href="mailto:info@sohaazarin.ir">
-              info@sohaazarin.ir
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- نوار پایین -->
-
-    <div class="footer-bottom">
-
-      <p>
-        © ۱۴۰۵ تمامی حقوق برای
-        <strong>شرکت سها آذرین سپهر</strong>
-        محفوظ است.
-      </p>
-
-      <div class="footer-bottom-links">
-
-        <a href="#">حریم خصوصی</a>
-
-        <span></span>
-
-        <a href="#">قوانین و مقررات</a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</footer>
-  <script src="{% static 'jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/isotope.min.js' %}"></script>
-  <script src="{% static 'js/owl-carousel.js' %}"></script>
-  <script src="{% static 'js/counter.js' %}"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
-  <script src="{% static "/js/site-header.js" %}"></script>
-
-
-  </body>
-</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="fa" dir="rtl">
+
+  <head>
+
+    {% include "includes/head_references.html" %}
+  </head>
+
+<body class="{% block body_class %}{% endblock %}">
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+    
+  {% include "includes/header.html" %}
+  <!-- ***** Header Area End ***** -->
+{% block content %}
+
+{% endblock %}  
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    {% include "includes/footer.html" %}
+    {% include "includes/footer_references.html" %}
+  </body>
+</html>
