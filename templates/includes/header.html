@@ -63,6 +63,7 @@
                 <input
                     type="search"
                     name="q"
+                    value="{{ request.GET.q|default:'' }}"
                     placeholder="جستجو..."
                     aria-label="جستجو"
                 >

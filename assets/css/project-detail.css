@@ -26,9 +26,128 @@
 
 
 .project-detail-section .detail-main-column {
+    position: relative;
+    z-index: 1;
+
     width: 100%;
     max-width: 100%;
     flex: 0 0 100%;
+}
+
+
+/* Signature: reuse the site's own capsule motif (see .about-us::before
+   on the homepage) as a quiet backdrop behind the detail column, so the
+   detail page still feels like part of the same brand system. */
+
+.project-detail-section .detail-main-column::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+
+    top: -30px;
+    right: -60px;
+
+    width: 55%;
+    height: 70%;
+
+    background: #f1f0fe;
+
+    border-radius: 500px;
+}
+
+
+/* =========================================
+   Breadcrumb
+========================================= */
+
+.detail-breadcrumb {
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+.detail-breadcrumb a {
+    color: #7a6ad8;
+
+    transition: color 0.2s ease;
+}
+
+
+.detail-breadcrumb a:hover {
+    color: #5f50bd;
+}
+
+
+.detail-breadcrumb i {
+    font-size: 10px;
+
+    color: #b9b2ea;
+}
+
+
+.detail-breadcrumb span {
+    color: #8a8a8a;
+}
+
+
+/* =========================================
+   Entrance Motion
+========================================= */
+
+@keyframes detailFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.detail-hero-image,
+.detail-meta-box,
+.detail-content,
+.back-link {
+    animation: detailFadeUp 0.6s ease both;
+}
+
+
+.detail-meta-box {
+    animation-delay: 0.08s;
+}
+
+
+.detail-content {
+    animation-delay: 0.16s;
+}
+
+
+.back-link {
+    animation-delay: 0.24s;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .detail-hero-image,
+    .detail-meta-box,
+    .detail-content,
+    .back-link {
+        animation: none;
+    }
 }
 
 
@@ -38,8 +157,10 @@
 
 .detail-hero-image {
     position: relative;
+    isolation: isolate;
 
     width: 100%;
+    min-height: 260px;
 
     margin-bottom: 25px;
 
@@ -54,6 +175,9 @@
 
 
 .detail-hero-image img {
+    position: relative;
+    z-index: 1;
+
     display: block;
 
     width: 100%;
@@ -69,6 +193,76 @@
 
 .detail-hero-image:hover img {
     transform: scale(1.02);
+}
+
+
+.detail-hero-overlay {
+    position: absolute;
+    z-index: 2;
+
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 60px 35px 25px;
+
+    background: linear-gradient(
+        to top,
+        rgba(20, 15, 45, 0.85) 0%,
+        rgba(20, 15, 45, 0.45) 55%,
+        rgba(20, 15, 45, 0) 100%
+    );
+
+    text-align: right;
+
+    pointer-events: none;
+}
+
+
+.detail-hero-overlay .category {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 8px;
+
+    padding: 4px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: #fff;
+    font-size: 13px;
+}
+
+
+.detail-hero-overlay .category i {
+    font-size: 11px;
+}
+
+
+.detail-hero-title {
+    margin: 0;
+
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+@media (max-width: 768px) {
+    .detail-hero-overlay {
+        padding: 40px 20px 18px;
+    }
+
+    .detail-hero-title {
+        font-size: 20px;
+    }
 }
 
 
@@ -129,6 +323,15 @@
 }
 
 
+.detail-meta-item i {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+
 /* =========================================
    Meta Divider
 ========================================= */
@@ -155,6 +358,8 @@
 
 .detail-meta-item:hover {
     background: rgba(255, 255, 255, 0.08);
+
+    transform: translateY(-4px);
 }
 
 
@@ -218,6 +423,13 @@
     border-radius: 22px;
 
     box-shadow: 0 10px 35px rgba(30, 30, 30, 0.06);
+
+    transition: box-shadow 0.3s ease;
+}
+
+
+.detail-content:hover {
+    box-shadow: 0 16px 45px rgba(30, 30, 30, 0.09);
 }
 
 
@@ -228,6 +440,12 @@
 .detail-content h3 {
     position: relative;
 
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
     margin: 0 0 28px;
 
     padding-bottom: 15px;
@@ -237,6 +455,26 @@
     font-weight: 800;
 
     color: #1e1e1e;
+}
+
+
+.detail-content h3 i {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    border-radius: 10px;
+
+    background: #f1f0fe;
+
+    color: #7a6ad8;
+
+    font-size: 15px;
 }
 
 
@@ -307,6 +545,8 @@
 
     justify-content: center;
 
+    gap: 8px;
+
     min-width: 190px;
     min-height: 50px;
 
@@ -331,6 +571,16 @@
 }
 
 
+.back-link a i {
+    transition: transform 0.25s ease;
+}
+
+
+.back-link a:hover i {
+    transform: translateX(4px);
+}
+
+
 .back-link a:hover {
     transform: translateY(-3px);
 
@@ -350,6 +600,16 @@
 
     .about-us.project-detail-section {
         padding: 65px 0 80px;
+    }
+
+
+    .project-detail-section .detail-main-column::before {
+        display: none;
+    }
+
+
+    .detail-breadcrumb {
+        font-size: 12px;
     }
 
 

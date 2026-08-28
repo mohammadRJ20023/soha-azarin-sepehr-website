@@ -2,56 +2,48 @@
 {% load static %}
 
 
+{% block title %}project detail{% endblock %}
 
+{% block body_class %}inner-page{% endblock %}
 
 {% block content %}
-
-  <div class="main-banner" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="item item-1">
-            <div class="header-text">
-              <span class="category">{{ project.project_type }}</span>
-              <h2 class="text-header-pic">{{ project.title }}</h2>
-              <p>{{ project.about|truncatewords:20 }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Banner End ***** -->
 
   <div class="section about-us project-detail-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 detail-main-column">
-          
 
           <div class="detail-hero-image">
             <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            <div class="detail-hero-overlay">
+              <span class="category"><i class="fa fa-tag"></i> {{ project.project_type }}</span>
+              <h2 class="detail-hero-title">{{ project.title }}</h2>
+            </div>
           </div>
 
           
 <div class="detail-meta-box">
 
     <div class="detail-meta-item">
+        <i class="fa fa-folder"></i>
         <span>نوع پروژه</span>
         <h6>{{ project.project_type }}</h6>
     </div>
 
     <div class="detail-meta-item">
+        <i class="fa fa-calendar"></i>
         <span>تاریخ شروع</span>
         <h6>{{ project.start_time }}</h6>
     </div>
 
     <div class="detail-meta-item">
+        <i class="fa fa-hourglass-half"></i>
         <span>مدت اجرا</span>
         <h6>{{ project.duration }} روز</h6>
     </div>
 
     <div class="detail-meta-item">
+        <i class="fa fa-check-circle"></i>
         <span>وضعیت</span>
         <h6>{{ project.status }}</h6>
     </div>
@@ -60,12 +52,12 @@
 
 
           <div class="detail-content">
-            <h3>درباره پروژه</h3>
+            <h3><i class="fa fa-align-right"></i> درباره پروژه</h3>
             <p>{{ project.about|linebreaks }}</p>
           </div>
 
           <div class="main-button back-link">
-            <a href="{% url 'portfolio:project_list' %}">بازگشت به نمونه‌کارها</a>
+            <a href="{% url 'portfolio:project_list' %}"><i class="fa fa-angle-right"></i> بازگشت به نمونه‌کارها</a>
           </div>
         </div>
 

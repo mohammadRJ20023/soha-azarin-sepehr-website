@@ -2,6 +2,10 @@
 {% load static %}
 <!DOCTYPE html>
 
+{% block title %}
+  Home
+{% endblock %}
+
 {% block content %}
 <div class="main-banner" id="top">
   <div class="container">
@@ -9,46 +13,48 @@
       <div class="col-lg-12">
         <div class="owl-carousel owl-banner">
           <div class="item item-1">
+            <img src="{% static 'images/banner3.png' %}" alt="پیمانکاری خدمات" class="banner-img">
             <div class="header-text">
-              <span class="category">خدمات تخصصی</span>
-              <h2 class="text-header-pic">راهکارهای حرفه‌ای برای توسعه کسب‌وکار شما</h2>
-              <p>ما با تکیه بر تجربه و تیمی متخصص، خدمات متنوعی را برای شرکت‌ها، سازمان‌ها و کسب‌وکارها با بالاترین کیفیت ارائه می‌دهیم.</p>
+              <span class="category">پیمانکاری خدمات</span>
+              <h2 class="text-header-pic">اجرای مطمئن خدمات سازمانی، مطابق با قرارداد</h2>
+              <p>از خدمات اداری و دفتری تا فضای سبز، خدمات ساختمانی و پشتیبانی، اجرای خدمات را به‌صورت پیمانکاری و مطابق با نیاز و تعهدات قرارداد بر عهده می‌گیریم.</p>
               <div class="buttons">
                 <div class="main-button">
-                  <a href="#">درخواست مشاوره</a>
+                  <a href="{% url 'Home:Home' %}#contact">درخواست مشاوره</a>
                 </div>
                 <div class="icon-button">
-                  <a href="#"><i class="fa fa-play"></i> آشنایی با خدمات ما</a>
+                  <a href="{% url 'Home:Home' %}#services"><i class="fa fa-play"></i> آشنایی با خدمات ما</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="item item-2">
+            <img src="{% static 'images/banner3.png' %}" alt="خدمات تغذیه" class="banner-img">
             <div class="header-text">
-              <span class="category">اجرای پروژه</span>
-              <h2>اجرای دقیق پروژه‌های خدماتی با تضمین کیفیت</h2>
-              <p>از برنامه‌ریزی تا اجرا، تمامی پروژه‌ها با رعایت استانداردهای حرفه‌ای و در زمان‌بندی مشخص انجام می‌شوند تا رضایت کامل مشتریان تأمین شود.</p>
+              <span class="category">خدمات تغذیه</span>
+              <h2>تأمین غذای سازمان‌ها </h2>
+              <p>
+تأمین، تهیه و ارائه غذای مجموعه‌ها و سازمان‌ها با برنامه‌ریزی، رعایت اصول بهداشتی و نظارت بر کیفیت، متناسب با نیاز و حجم خدمات انجام می‌شود.</p>
               <div class="buttons">
                 <div class="main-button">
-                  <a href="#">ثبت درخواست</a>
+                  <a href="{% url 'Home:Home' %}#contact">ثبت درخواست</a>
                 </div>
                 <div class="icon-button">
-                  <a href="#"><i class="fa fa-play"></i> مشاهده نمونه پروژه‌ها</a>
+                  <a href="{% url "portfolio:project_list" %}"><i class="fa fa-play"></i> مشاهده نمونه پروژه‌ها</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="item item-3">
+            <img src="{% static 'images/banner2.png' %}" alt="تأمین نیروی انسانی" class="banner-img">
             <div class="header-text">
-              <span class="category">پشتیبانی تخصصی</span>
-              <h2>همراه شما از شروع پروژه تا پشتیبانی پس از اجرا</h2>
-              <p>هدف ما ارائه خدماتی مطمئن، سریع و حرفه‌ای است تا بتوانید با اطمینان کامل پروژه‌های خود را به تیم ما بسپارید.</p>
+              <span class="category">تأمین نیروی انسانی</span>
+              <h2>نیروی موردنیاز سازمان شما، با مدیریت حرفه‌ای</h2>
+              <p>
+نیروهای موردنیاز سازمان‌ها و مجموعه‌ها را متناسب با نوع فعالیت و شرایط قرارداد تأمین و مدیریت می‌کنیم تا امور محوله با نظم و کیفیت مطلوب انجام شود.</p>
               <div class="buttons">
                 <div class="main-button">
-                  <a href="#">دریافت مشاوره</a>
-                </div>
-                <div class="icon-button">
-                  <a href="#"><i class="fa fa-play"></i> چرا ما را انتخاب کنید؟</a>
+                  <a href="{% url 'Home:Home' %}#contact">دریافت مشاوره</a>
                 </div>
               </div>
             </div>
@@ -68,11 +74,9 @@
             <img src="{% static "/images/service-01.png" %}" alt="مشاوره تخصصی">
           </div>
           <div class="main-content">
-            <h4>مشاوره تخصصی</h4>
-            <p>با ارائه مشاوره حرفه‌ای، بهترین راهکارها را متناسب با نیاز کسب‌وکار شما پیشنهاد می‌دهیم تا پروژه‌ها با اطمینان آغاز شوند.</p>
-            <div class="main-button">
-              <a href="#">بیشتر بخوانید</a>
-            </div>
+            <h4>اجرای خدمات پیمانکاری </h4>
+            <p>اجرای خدمات اداری، پشتیبانی، فضای سبز، ساختمانی و سایر خدمات سازمانی با مدیریت و نظارت مستمر بر کیفیت اجرا.</p>
+            
           </div>
         </div>
       </div>
@@ -82,11 +86,8 @@
             <img src="{% static "/images/service-02.png" %}" alt="اجرای پروژه">
           </div>
           <div class="main-content">
-            <h4>اجرای پروژه</h4>
-            <p>پروژه‌های خدماتی را با برنامه‌ریزی دقیق، کیفیت بالا و رعایت زمان‌بندی اجرا می‌کنیم تا بهترین نتیجه برای مشتریان حاصل شود.</p>
-            <div class="main-button">
-              <a href="#">بیشتر بخوانید</a>
-            </div>
+            <h4>تأمین نیروی انسانی</h4>
+            <p>تأمین و مدیریت نیروی انسانی موردنیاز سازمان‌ها و مجموعه‌ها در حوزه‌های مختلف، متناسب با نیاز و شرایط قرارداد.</p>
           </div>
         </div>
       </div>
@@ -96,11 +97,8 @@
             <img src="{% static "/images/service-03.png" %}" alt="پشتیبانی و نگهداری">
           </div>
           <div class="main-content">
-            <h4>پشتیبانی و نگهداری</h4>
-            <p>پس از اجرای پروژه نیز در کنار شما هستیم و با خدمات پشتیبانی و نگهداری، عملکرد مطلوب خدمات را تضمین می‌کنیم.</p>
-            <div class="main-button">
-              <a href="#">بیشتر بخوانید</a>
-            </div>
+            <h4>تأمین و مدیریت خدمات</h4>
+            <p>بر عهده گرفتن کامل فرآیند ارائه خدمات، از تأمین نیرو و تجهیزات تا مدیریت و نظارت، با هدف ارائه خدمات منظم و قابل اتکا.</p>
           </div>
         </div>
       </div>
@@ -116,48 +114,49 @@
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                چگونه پروژه خود را آغاز کنیم؟
+               چه خدماتی توسط سها آذرین ارائه می‌شود؟
               </button>
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                تنها کافی است درخواست خود را ثبت کنید تا کارشناسان <strong>شرکت ما</strong> در کوتاه‌ترین زمان با شما تماس گرفته و بهترین راهکار را ارائه دهند.
+              <strong>شرکت ما</strong> در زمینه ارائه خدمات پیمانکاری و پشتیبانی سازمان‌ها و مجموعه‌ها فعالیت می‌کند و خدماتی مانند تأمین نیروی انسانی، امور اداری و دفتری، تغذیه و تهیه غذا، فضای سبز، خدمات ساختمانی و سایر خدمات موردنیاز مجموعه‌ها را ارائه می‌دهد.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                روند اجرای پروژه چگونه است؟
+               نحوه همکاری و عقد قرارداد چگونه است؟
               </button>
             </h2>
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                پس از بررسی نیازهای شما، برنامه‌ریزی انجام شده و پروژه طبق زمان‌بندی مشخص با بالاترین کیفیت اجرا و تحویل خواهد شد.
+               پس از بررسی نیازها و شرایط مجموعه، خدمات موردنظر و الزامات اجرایی مشخص شده و قرارداد متناسب با نوع و حجم خدمات منعقد می‌شود. پس از آن، فرآیند تأمین نیرو و اجرای خدمات تحت نظارت سها آذرین انجام خواهد شد.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingThree">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                چرا ما را انتخاب کنید؟
+               
+                آیا تأمین و مدیریت نیروی انسانی نیز بر عهده شرکت است ؟     
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                تجربه، تیم متخصص، تعهد به کیفیت و رضایت مشتری از مهم‌ترین دلایلی هستند که ما را به انتخابی مطمئن برای اجرای پروژه‌های خدماتی تبدیل کرده‌اند.
+              بله، سها آذرین می‌تواند تأمین و مدیریت نیروهای موردنیاز مجموعه‌ها را بر عهده بگیرد و امور مرتبط با به‌کارگیری، پرداخت حقوق و مدیریت نیروها را مطابق مفاد قرارداد انجام دهد.
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingFour">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                آیا خدمات پشتیبانی ارائه می‌شود؟
+               چرا سها آذرین را برای اجرای خدمات انتخاب کنیم؟
               </button>
             </h2>
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
               <div class="accordion-body">
-                بله، پس از اتمام پروژه نیز خدمات پشتیبانی و پاسخگویی به مشتریان ارائه می‌شود تا از کیفیت و عملکرد خدمات اطمینان کامل داشته باشید.
+               تجربه در ارائه خدمات پیمانکاری، تأمین نیروی انسانی، مدیریت و نظارت بر اجرای خدمات و تعهد به کیفیت، سها آذرین را به گزینه‌ای قابل اتکا برای همکاری با سازمان‌ها و مجموعه‌های مختلف تبدیل کرده است.
               </div>
             </div>
           </div>
@@ -423,7 +422,3 @@
   
 
 {% endblock %}
-
-  
-
-  
