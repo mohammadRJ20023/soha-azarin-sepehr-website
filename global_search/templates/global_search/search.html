@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  project_list
+{% endblock %}
+
+
+{% block body_class %}inner-page{% endblock %}
+
+{% block content %}
+  <!DOCTYPE html>
+
+
+  
+    <div class="section events" id="events" style="padding-top: 0px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <div class="section-heading">
+              <h2>نتایج سرچ برای "{{search_query }}"</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-12 col-md-6">
+        {% for project in projects %}
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="{{ project.image.url }}" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">{{ project.project_type }} </span>
+                    <h4>{{ project.title }}</h4>
+                  </li>
+                  <li>
+                    <span>تاریخ اجرا:</span>
+                    <h6>{{ project.start_time }}</h6>
+                  </li>
+                  <li>
+                    <span>مدت اجرا:</span>
+                    <h6>{{ project.duration }}</h6>
+                  </li>
+                  <li>
+                    <span>وضعیت:</span>
+                    <h6>{{ project.status }}</h6>
+                  </li>
+                </ul>
+                <a href="{% url "portfolio:project_detail" project.slug %}"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- ***** Pagination Start ***** -->
+    <div class="section pagination-section" id="pagination">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="custom-pagination">
+
+              <li>
+                {% if project.has_previous %}
+                  <a href="?page={{ project.previous_page_number }}&q={{ search_query }}" class="page-link page-arrow">
+                    <i class="fa fa-angle-left"></i>
+                  </a>
+                {% else %}
+                  <span class="page-link page-arrow disabled">
+                    <i class="fa fa-angle-left"></i>
+                  </span>
+                {% endif %}
+              </li>
+
+              {% for num in project.paginator.page_range %}
+                <li>
+                  <a href="?page={{ num }}&q={{ search_query }}" class="page-link {% if project.number == num %}active{% endif %}">
+                    {{ num }}
+                  </a>
+                </li>
+              {% endfor %}
+
+              <li>
+                {% if project.has_next %}
+                  <a href="?page={{ project.next_page_number }}&q={{ search_query }}" class="page-link page-arrow">
+                    <i class="fa fa-angle-right"></i>
+                  </a>
+                {% else %}
+                  <span class="page-link page-arrow disabled">
+                    <i class="fa fa-angle-right"></i>
+                  </span>
+                {% endif %}
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Pagination End ***** -->
+{% endblock %}
+
+    

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     #my app: 
     "Home.apps.HomeConfig",
     "Services.apps.ServicesConfig",
-    "portfolio.apps.PortfolioConfig"
+    "portfolio.apps.PortfolioConfig",
+    "global_search.apps.GlobalSearchConfig"
 ]
 
 MIDDLEWARE = [
